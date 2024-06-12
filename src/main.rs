@@ -48,7 +48,7 @@ unsafe fn get_ntdll_text(
 ) -> Result<MetaData, Box<dyn Error>> {
     let text_offset: u32;
     let text_size: u32;
-    asm!( //change this to depend on the fresh.
+    asm!(
     " mov ecx, [rax+0x1f8]    ", // Size of .text section.
     " mov edx, [rax+0x1fc]     ", //Offset to .text section
     out ("ecx") text_size,
